@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title><%= @title %></title>
+		<link href="/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+		<%= yield :javascript %>
+  </head>
+  <body>
+    <div id="page">
+			<div id="header">
+				<h1><a href="<%= root_path %>">Idealogue</a></h1>
+				<div id="user_menu">
+					<% if logged_in? -%>
+						Welcome, <span class="bold"><%= link_to h(current_user.login), user_path(current_user) %></span>
+						[<%= link_to 'logout', logout_url %>]
+				  <% else -%>
+						<%= link_to 'login', new_session_path %> |
+						<%= link_to 'signup', new_user_path %>
+				  <% end -%>
+				</div>
+			</div>
+			<div id="middle">
+      	<div id="sidebar" class="left">
+					<%= yield :sidebar_left %>
+	      </div>
+	      <div id="content">
+					<% if flash[:notice] -%> 
+			      <div id="notice"><%= flash[:notice] %></div> 
+			    <% end -%> 
+			    <% if flash[:error] -%> 
+			      <div id="error">Do not even.<%= flash[:error] %></div> 
+			    <% end -%>
+					<%= yield %>
+	      </div>
+			</div>
+      <div id="footer">
+      	<a href="http://madebylaw.com">{ l a w }</a>
+      </div>
+    </div>
+  </body>
+</html>

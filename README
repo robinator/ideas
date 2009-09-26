@@ -1,0 +1,11 @@
+A baseline rails app:
+
+ - Rails Version: 2.3.3
+
+ - Installed Gems:
+   - rubyist-aasm
+
+ - Installed Plugins:
+	 - recaptcha
+	 - restful_authentication
+	 - userstamp

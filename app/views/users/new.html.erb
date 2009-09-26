@@ -1,0 +1,45 @@
+<% content_for :sidebar_left do %>
+<ul id="sidebar-items">
+  <li>
+    <h3>What?</h3>
+    <ul class="links">
+      <li>Idealogue is a <span class="bold italic fancy">free</span> way to organize and share your ideas.</li>
+    </ul>
+  </li>
+  <li>
+    <h3>Features</h3>
+    <ul class="links">
+      <li>Organize, categorize, and search ideas.</li>
+      <li>Set goals and track them over time.</li>
+      <li>Keep ideas private, share them with colleagues, or make them public.</li>
+    </ul>
+  </li>       
+</ul>
+<% end %>
+<h1>Sign up as a new user</h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+<% form_for :user, :url => users_path do |f| -%>
+	<p>
+		<%= label_tag 'login' %><br/>
+		<%= f.text_field :login %>
+	</p>
+	<p>
+		<%= label_tag 'email' %><br/>
+		<%= f.text_field :email %> <span class="bold fancy italic hint">no spam</span>
+	</p>
+	<p>
+		<%= label_tag 'password' %><br/>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p>
+		<label for="recaptcha">Human?</label>
+		<%= recaptcha_tags :display => {:theme => 'clean'} %>
+	</p>
+	<p><%= submit_tag 'Sign up' %></p>
+<% end -%>
