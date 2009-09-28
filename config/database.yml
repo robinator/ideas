@@ -4,7 +4,7 @@ development:
   host: localhost
   username: root
   #password: root
-  database: eventist
+  database: idealogue
 
 test:
   adapter: mysql

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   model_stamper
   
   has_many :ideas
+  has_many :categories
   
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

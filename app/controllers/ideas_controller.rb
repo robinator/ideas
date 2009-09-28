@@ -3,7 +3,8 @@ class IdeasController < ApplicationController
   # GET /ideas.xml
   def index
     @ideas = Idea.all
-
+    @categories = Category.find(:all, :conditions => {:user_id => current_user})
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ideas }
@@ -14,6 +15,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
+    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +27,7 @@ class IdeasController < ApplicationController
   # GET /ideas/new.xml
   def new
     @idea = Idea.new
+    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +44,7 @@ class IdeasController < ApplicationController
   # POST /ideas.xml
   def create
     @idea = Idea.new(params[:ideas])
+    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       if @idea.save
@@ -58,6 +62,7 @@ class IdeasController < ApplicationController
   # PUT /ideas/1.xml
   def update
     @idea = Idea.find(params[:id])
+    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])

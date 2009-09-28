@@ -11,7 +11,6 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :when_to_execute
       t.boolean :executed, :default => false
       
-      t.userstamps
       t.timestamps
     end
   end
