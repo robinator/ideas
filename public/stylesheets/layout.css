@@ -102,6 +102,9 @@ input {
   font-size: 11px;
   margin: 2px 0px;
 }
+#search #search-text {
+	width: 100%;
+}
 #search form {
 	background-color: yellow;
 	margin: 0px;

@@ -25,7 +25,14 @@
   </li>
 </ul>
 <% end %>
-<p>Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of
-lather on which a mirror and a razor lay crossed. A yellow dressinggown,
-ungirdled, was sustained gently behind him on the mild morning air. He
-held the bowl aloft and intoned:</p>
+<h2>New idea</h2>
+
+<% form_for(@idea) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', ideas_path %>

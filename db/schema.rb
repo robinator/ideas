@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 2) do
+
+  create_table "ideas", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.string   "name"
+    t.text     "body"
+    t.string   "category"
+    t.string   "inspiration"
+    t.string   "application"
+    t.string   "when_to_execute"
+    t.boolean  "executed",        :default => false
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
