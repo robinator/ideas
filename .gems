@@ -1,1 +1,2 @@
 rubyist-aasm --source gems.github.com
+jkraemer-acts_as_ferret --source gems.github.com
