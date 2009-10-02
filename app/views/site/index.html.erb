@@ -1,30 +1,5 @@
-<% content_for :sidebar_left do %>
-<ul id="sidebar-items">
-  <li>
-    <form id="search" action="http://www.google.com/search" method="get">
-      <input type="text" id="search-text" name="q" value="" />
-      <input type="submit" value="Search" />
-    </form>
-  </li>      
-  <li>
-    <h3>Ideas</h3>
-    <ul class="links">
-      <li><a href="<%= new_idea_path %>">New</a></li>
-      <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-      <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
-    </ul>
-  </li>        
-  <li>
-    <h3>Categories</h3>
-    <ul class="links">
-      <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-      <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-      <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-      <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-    </ul>
-  </li>
-</ul>
-<% end %>
+<%= render 'side_menu'%>
+
 <p>Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of
 lather on which a mirror and a razor lay crossed. A yellow dressinggown,
 ungirdled, was sustained gently behind him on the mild morning air. He

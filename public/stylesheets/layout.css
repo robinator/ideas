@@ -30,6 +30,9 @@ a:hover {
 input {
 	margin-bottom: 5px;
 }
+p {
+	margin: 5px 0px;
+}
 .bold {
 	font-weight: bold;
 }
@@ -180,6 +183,27 @@ input {
 }
 #footer a {
 	color: #F38989;
+}
+.idea h2 {
+	display: inline;
+	margin: 0px;
+}
+.idea .controls {
+	padding-left: 10px;
+	font-size: 11px;
+}
+.idea .delete {
+	color: #EC3734;
+}
+.idea .info {
+	display: block;
+	font-size: 10px;
+	font-style: italic;
+}
+.idea .body {
+	width: 50%;
+	background-color: #eeeeee;
+	padding: 5px;
 }
 
 

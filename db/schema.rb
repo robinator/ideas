@@ -12,21 +12,23 @@
 ActiveRecord::Schema.define(:version => 3) do
 
   create_table "categories", :force => true do |t|
-    t.string   "CreateCategories"
+    t.string   "name"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ideas", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "category_id"
     t.integer  "parent_id"
     t.string   "name"
     t.text     "body"
-    t.string   "category"
     t.string   "inspiration"
     t.string   "application"
     t.string   "when_to_execute"
     t.boolean  "executed",        :default => false
+    t.boolean  "private",         :default => true
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"

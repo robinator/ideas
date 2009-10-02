@@ -1,3 +1,13 @@
+<%= render 'side_menu'%>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<div class="idea">
+	<h2><%= @idea.name %></h2> <span class="controls"><%= link_to 'edit', edit_idea_path(@idea) %> | <%= link_to 'delete', @idea, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %></span>
+	<span class="info">Created by <%= link_to @idea.creator.login, @idea.creator %> on <%= readable_date(@idea.created_at) %></span>
+
+	<p class="body"><%= @idea.body %></p>
+	<p><span class="bold">inspiration: </span><%= @idea.inspiration %></p>
+	<p><span class="bold">application: </span><%= @idea.application %></p>
+	<p><span class="bold">when to execute: </span><%= @idea.when_to_execute %></p>
+	<p><span class="bold">executed?: </span><%= @idea.executed? %></p>
+	<p><span class="bold">access: </span><%= @idea.access %></p>
+</div>

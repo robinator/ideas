@@ -1,9 +1,10 @@
 class IdeasController < ApplicationController
+  before_filter :login_required, :except => [:show]
+  
   # GET /ideas
   # GET /ideas.xml
   def index
-    @ideas = Idea.all
-    @categories = Category.find(:all, :conditions => {:user_id => current_user})
+    @ideas = Idea.all(:order => 'created_at DESC')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +16,6 @@ class IdeasController < ApplicationController
   # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
-    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +27,6 @@ class IdeasController < ApplicationController
   # GET /ideas/new.xml
   def new
     @idea = Idea.new
-    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,9 +42,9 @@ class IdeasController < ApplicationController
   # POST /ideas
   # POST /ideas.xml
   def create
-    @idea = Idea.new(params[:ideas])
-    @categories = Category.find(:all, :conditions => {:user_id => current_user})
-
+    debugger
+    @idea = Idea.new(params[:idea])
+    
     respond_to do |format|
       if @idea.save
         flash[:notice] = 'Idea was successfully created.'
@@ -62,7 +61,6 @@ class IdeasController < ApplicationController
   # PUT /ideas/1.xml
   def update
     @idea = Idea.find(params[:id])
-    @categories = Category.find(:all, :conditions => {:user_id => current_user})
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
@@ -85,6 +83,15 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(ideas_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def search
+    @ideas = Idea.find_with_ferret(params[:q])
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @ideas }
     end
   end
 end

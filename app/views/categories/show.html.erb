@@ -1,3 +1,11 @@
+<%= render 'side_menu'%>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="idea">
+	<h2><%= @category.name %></h2> <span class="controls"><%= link_to 'edit', edit_category_path(@category) %> | <%= link_to 'delete', @category, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %></span>
+	<span class="info">Created by <%= link_to @category.creator.login, @category.creator %> on <%= readable_date(@category.created_at) %></span>
+</div>
+<ul>
+	<% @ideas.each do |idea| %>
+		<li><%= link_to idea.name, idea %></li>
+	<% end %>
+</ul>

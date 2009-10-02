@@ -13,7 +13,7 @@ class IdeasControllerTest < ActionController::TestCase
   end
 
   test "should create ideas" do
-    assert_difference('Ideas.count') do
+    assert_difference('Idea.count') do
       post :create, :ideas => { }
     end
 
@@ -36,7 +36,7 @@ class IdeasControllerTest < ActionController::TestCase
   end
 
   test "should destroy ideas" do
-    assert_difference('Ideas.count', -1) do
+    assert_difference('Idea.count', -1) do
       delete :destroy, :id => ideas(:one).to_param
     end
 

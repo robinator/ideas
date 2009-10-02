@@ -1,12 +1,13 @@
-<h1>Editing category</h1>
+<%= render 'side_menu'%>
+<h2>Editing category</h2>
 
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
-
+	<p>
+		<%= label_tag 'name' %><br/>
+		<%= f.text_field :name %>
+	</p>
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
