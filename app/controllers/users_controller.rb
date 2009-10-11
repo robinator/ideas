@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
+  before_filter :login_required, :only => [:edit, :update]
   
 
   # render new.rhtml
@@ -27,6 +26,44 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+  end
+  
+  def edit
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if current_user.id == @user.id
+        format.html
+      else
+        flash[:error] = "You do not have permission to edit this user."
+        format.html { redirect_to(ideas_url) }
+      end
+    end
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      flash[:error] = "You do not have permission to edit this user."
+      redirect_to(ideas_url)
+      return
+    end    
+    
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        flash[:notice] = 'User information was successfully updated.'
+        format.html { redirect_to(ideas_url) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  def ideas
+    @user = User.find_by_login(params[:login])
+    @ideas = @user.nil? ? [] : @user.public_ideas
   end
 end

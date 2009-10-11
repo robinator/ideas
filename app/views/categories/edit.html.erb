@@ -4,10 +4,10 @@
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
 	<p>
-		<%= label_tag 'name' %><br/>
+		<%= f.label 'name' %><br/>
 		<%= f.text_field :name %>
 	</p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update' %> <%= link_to 'cancel', @category %>
   </p>
 <% end %>

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 3) do
     t.string   "application"
     t.string   "when_to_execute"
     t.boolean  "executed",        :default => false
-    t.boolean  "private",         :default => true
+    t.string   "access",          :default => "private"
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"

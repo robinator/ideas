@@ -9,16 +9,9 @@ class SiteController < ApplicationController
   def about
     @title = " "
   end
-
-  def help
-    @title = " "
-  end
-
-  def admin
-    @title = "AgentMachine - Admin Section"
-  end
   
-  def contact
+  def feedback
     
   end
+
 end

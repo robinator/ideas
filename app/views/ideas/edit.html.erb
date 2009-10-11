@@ -5,7 +5,7 @@
 <% form_for(@idea) do |f| %>
   <%= f.error_messages %>
 	<p>
-		<%= label_tag 'name' %><br/>
+		<%= f.label 'name' %><br/>
 		<%= f.text_field :name %>
 	</p>
 	<p>
@@ -47,9 +47,6 @@
 		<%#= f.radio_button("access", "shared") %>
 	</p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update' %> <%= link_to 'cancel', @idea %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @idea %> |
-<%= link_to 'Back', ideas_path %>

@@ -51,6 +51,20 @@ class User < ActiveRecord::Base
     Category.all(:conditions => {:creator_id => self.id})
   end
 
+  def public_ideas
+    Idea.all(:conditions => {:creator_id => self.id, :access => 'public'}, :order => 'created_at DESC')
+  end
+
+  def has_access?(object)
+    object.creator_id == self.id
+  end
+  
+  def ideas(category_id = nil)
+    conditions = {:creator_id => self.id}
+    conditions[:category_id] = category_id if category_id
+    @ideas = Idea.all(:conditions => conditions, :order => 'created_at DESC')
+  end
+  
   protected
     
 

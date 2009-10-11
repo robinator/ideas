@@ -1,3 +1,8 @@
+<% if current_user && current_user.id == @user.id %>
+	<span class="controls">
+		<%= link_to 'edit', edit_user_path(@user) %>
+	</span>
+<% end %>
 <p>login: <%= @user.login %></p>
 <p>email: <%= @user.email %></p>
 <p>member since: <%= @user.created_at.to_s %></p>

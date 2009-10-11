@@ -1,7 +1,13 @@
 <%= render 'side_menu'%>
 
 <div class="idea">
-	<h2><%= @idea.name %></h2> <span class="controls"><%= link_to 'edit', edit_idea_path(@idea) %> | <%= link_to 'delete', @idea, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %></span>
+	<h2><%= @idea.name %></h2>
+	<% if current_user && current_user.has_access?(@idea) %>
+		<span class="controls">
+			<%= link_to 'edit', edit_idea_path(@idea) %> | 
+			<%= link_to 'delete', @idea, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
+		</span>
+	<% end %>
 	<span class="info">Created by <%= link_to @idea.creator.login, @idea.creator %> on <%= readable_date(@idea.created_at) %></span>
 
 	<p class="body"><%= @idea.body %></p>

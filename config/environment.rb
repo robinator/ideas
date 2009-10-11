@@ -6,11 +6,6 @@ RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-# put passwords and things here to keep out of git
-#require File.join(File.dirname(__FILE__), 'keys')
-require 'acts_as_ferret'
-ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
-
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -41,7 +36,7 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
  # config.active_record.observers = :user_observer
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
-  config.gem 'jkraemer-acts_as_ferret', :version => '~> 0.4.4', :lib => 'acts_as_ferret', :source => 'http://gems.github.com'
+  #config.gem 'jkraemer-acts_as_ferret', :version => '~> 0.4.4', :lib => 'acts_as_ferret', :source => 'http://gems.github.com'
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]

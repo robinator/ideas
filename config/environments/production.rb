@@ -9,6 +9,10 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
+require 'acts_as_ferret'
+ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
+
+
 # See everything in the log (default is :info)
 # config.log_level = :debug
 

@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  map.about '/about', :controller => 'site', :action => 'about'
+  map.feedback '/feedback', :controller => 'site', :action => 'feedback'
 
   map.resources :ideas
   map.resources :categories
@@ -11,8 +13,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :session
 
-  map.root :controller => 'site', :action => 'index' 
+  map.root :controller => 'ideas', :action => 'index' 
   
+  map.connect 'u/:login', :controller => 'users', :action => 'ideas'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

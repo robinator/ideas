@@ -132,6 +132,13 @@ p {
 	font-size: 11px;
   margin-bottom: 5px;
 }
+#message {
+	margin: 5px 0px;
+	padding: 5px 10px;
+	background: #C8F5C3;
+	border: 1px dashed #33CB21;
+	display: inline;
+}
 #notice {
 	background: #C8F5C3 url('../images/accept.png') no-repeat 5px;
 	border: 1px dashed #33CB21;
@@ -142,28 +149,37 @@ p {
 }
 #notice, #error {
 	padding: 5px 25px;
+	margin-bottom: 5px;
 }
 .fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+	display: inline;
+}
+.fieldWithErrors input {
+	border: 1px solid #D91813;
+	padding: 2px;
+}
+.fieldWithErrors label {
+	color: #D91813;
+	font-weight: bold;
 }
 #errorExplanation {
   width: 400px;
-  border: 2px solid red;
+	border: 1px solid #D91813;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
 }
 #errorExplanation h2 {
   text-align: left;
   font-weight: bold;
-  padding: 5px 5px 5px 15px;
+	padding: 5px 25px;
   font-size: 12px;
   margin: -7px;
-  background-color: #c00;
-  color: #fff;
+	background: #F9C0BF url('../images/cancel.png') no-repeat 5px;
+  font-family: Tahoma;  
+	font-style: normal;
+	letter-spacing: -0px
 }
 #errorExplanation p {
   color: #333;
@@ -173,6 +189,7 @@ p {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+	margin-left: 30px;
 }
 #footer {
 	clear: both;
@@ -183,6 +200,10 @@ p {
 }
 #footer a {
 	color: #F38989;
+}
+#footer #site_nav a {
+	color: #3377DD;
+	padding: 0px 3px;
 }
 .idea h2 {
 	display: inline;
