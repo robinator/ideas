@@ -1,10 +1,12 @@
-<h2><%= @user.login %>'s Ideas</h2>
-<ul>
-	<% if @ideas.empty? %>
-		<p class="italic">No ideas?!</p>
-	<% else %>
-		<% @ideas.each do |idea| %>
-			<li><%= link_to idea.name, idea %></li>
-		<% end %>
+<h2><%=h @user.login %>'s Ideas</h2>
+<% if @ideas.empty? %>
+	<p class="italic">No ideas?!</p>
+<% else %>
+<ul id="ideas">
+	<% @ideas.each do |idea| %>
+		<li>
+			<span><%= link_to h(idea.name), idea %></span>
+		</li>
 	<% end %>
 </ul>
+<% end %>

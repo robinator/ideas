@@ -2,10 +2,6 @@ class SiteController < ApplicationController
   #before_filter :store_location
   #before_filter :check_administrator_role, :only => [:admin, :recycle_bin]
   
-  def index
-
-  end
-
   def about
     @title = " "
   end

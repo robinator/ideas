@@ -226,6 +226,12 @@ p {
 	background-color: #eeeeee;
 	padding: 5px;
 }
-
-
+#ideas {
+	margin-left: 10px;
+}
+#ideas li {
+	padding: 3px 0px;
+}
+#ideas span {
+}
 

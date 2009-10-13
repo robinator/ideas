@@ -18,7 +18,7 @@
 		    <h3>Categories</h3>
 		    <ul class="links">
 				<% current_user.categories.each do |category| %>
-					<li><%= link_to category.name, category %></li>
+					<li><%= link_to h(category.name), category %></li>
 				<% end %>
 		    </ul>
 		  </li>

@@ -1,16 +1,18 @@
 <%= render 'side_menu'%>
 
 <h2>Ideas</h2>
-<ul>
-	<% if @ideas.empty? %>
-		<p class="italic">No ideas?!</p>
-		<br />
-		<div id="message">
-			<%= link_to 'Create a new idea', new_idea_path %>
-		</div>
-	<% else %>
-		<% @ideas.each do |idea| %>
-			<li><%= link_to idea.name, idea %></li>
-		<% end %>
+<% if @ideas.empty? %>
+	<p class="italic">No ideas?!</p>
+	<br />
+	<div id="message">
+		<%= link_to 'Create a new idea', new_idea_path %>
+	</div>
+<% else %>
+<ul id="ideas">
+	<% @ideas.each do |idea| %>
+		<li>
+			<span><%= link_to h(idea.name), idea %></span>
+		</li>
 	<% end %>
 </ul>
+<% end %>
