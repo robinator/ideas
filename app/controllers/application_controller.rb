@@ -9,4 +9,22 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  protected  
+
+  def log_error(exception) 
+    super(exception)
+    begin
+      if RAILS_ENV == 'production'
+        UserMailer.deliver_snapshot(
+          exception, 
+          clean_backtrace(exception), 
+          session.data, 
+          params, 
+          request.env)
+      end
+    rescue => e
+      logger.error(e)
+    end
+  end
+  
 end
