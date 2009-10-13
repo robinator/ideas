@@ -11,6 +11,8 @@ class SiteController < ApplicationController
   end
   
   def feedback
+    user = User.first
+    UserMailer.deliver_signup_notification(user)
     
   end
 

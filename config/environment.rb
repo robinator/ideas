@@ -37,7 +37,9 @@ Rails::Initializer.run do |config|
  # config.active_record.observers = :user_observer
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
   #config.gem 'jkraemer-acts_as_ferret', :version => '~> 0.4.4', :lib => 'acts_as_ferret', :source => 'http://gems.github.com'
-
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de

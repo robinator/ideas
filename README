@@ -1,7 +1,8 @@
 TODO
 Rev 1:
  - polish (list view for ideas)
- - idealogue email address
+ - emails (welcome, errors)
+ - google analytics 
 
 Rev 2:
  - sharing ideas with users, outsiders
@@ -10,5 +11,7 @@ Rev 2:
  - goal tracking?
 
 Rev 3:
+ - json api
  - iphone app
  - desktop app
+ - RSS for public ideas
