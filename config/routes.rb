@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'ideas', :action => 'index' 
   
-  map.connect 'u/:login', :controller => 'users', :action => 'ideas'
+  map.connect 'u/:login.:format', :controller => 'users', :action => 'ideas'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

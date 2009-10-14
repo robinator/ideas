@@ -65,5 +65,10 @@ class UsersController < ApplicationController
   def ideas
     @user = User.find_by_login(params[:login])
     @ideas = @user.nil? ? [] : @user.public_ideas
+    
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 end
