@@ -1,4 +1,5 @@
-<h2><%=h @user.login %>'s Ideas</h2>
+<h2 style="display: inline; margin-right: 10px;"><%=h @user.login %>'s Ideas</h2>
+<a href="/u/<%= @user.login %>.rss"><img src="/images/feed.png" alt="rss" title="RSS feed" /></a>
 <% if @ideas.empty? %>
 	<p class="italic">No ideas?!</p>
 <% else %>
