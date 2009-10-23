@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       flash[:error] = "You do not have permission to edit this user."
       redirect_to(ideas_url)
       return
-    end    
+    end
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -69,6 +69,19 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.rss { render :layout => false }
+    end
+  end
+  
+  def forgot_password
+    if params[:email]
+      @email = params[:email]
+      @user = User.find_by_email(params[:email])
+      if @user
+        @user.deliver_forgot_password
+        flash[:notice] = "A temporary password has been sent to your email"
+      else
+        flash[:error] = "Could not find a user with that email address"
+      end
     end
   end
 end

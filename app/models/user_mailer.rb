@@ -5,6 +5,13 @@ class UserMailer < ActionMailer::Base
     @body = { :user => user }
   end
   
+  def forgot_password(user, password)
+    setup(user)
+    @subject = "Thanks for signing up!"
+    @body = { :user => user }
+    @password = password
+  end
+  
   def snapshot(exception, trace, session, params, env, sent_on = Time.now)
 
       # [nazgum]: Setting the content-type like this did not work for me
@@ -13,9 +20,9 @@ class UserMailer < ActionMailer::Base
       # Setting the content-type like this does:
       content_type "text/html" 
 
-      @recipients         = 'errors@flywheelnetworks.com'
-      @from               = "<flux@flywheelnetworks.com>"
-      @subject            = "[Error][AgentCRM] exception in #{env['REQUEST_URI']}" 
+      @recipients         = 'idealogue@madebylaw.com'
+      @from               = "<idealogue@madebylaw.com>"
+      @subject            = "Idealogue exception in #{env['REQUEST_URI']}" 
       @sent_on            = sent_on
       @body["exception"]  = exception
       @body["trace"]      = trace

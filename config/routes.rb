@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.about '/about', :controller => 'site', :action => 'about'
   map.feedback '/feedback', :controller => 'site', :action => 'feedback'
-
+  map.forgot_password '/forgot_password', :controller => 'users', :action => 'forgot_password'
   map.resources :ideas
   map.resources :categories
   map.resources :schemas

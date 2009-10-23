@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessor :current_password
 
   after_create :deliver_signup_notification
   
@@ -65,6 +66,13 @@ class User < ActiveRecord::Base
     conditions = {:creator_id => self.id}
     conditions[:category_id] = category_id if category_id
     @ideas = Idea.all(:conditions => conditions, :order => 'created_at DESC')
+  end
+  
+  def deliver_forgot_password
+    new_password = rand(999999999)
+    self.update_attributes(:password => new_password, :password_confirmation => new_password)
+    
+    UserMailer.deliver_forgot_password(self, new_password)
   end
   
   def deliver_signup_notification

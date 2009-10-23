@@ -3,7 +3,7 @@
 		<%= link_to 'edit', edit_user_path(@user) %>
 	</span>
 <% end %>
-<p>login: <%=h @user.login %></p>
-<p>email: <%=h @user.email %></p>
-<p>member since: <%= @user.created_at.to_s %></p>
-<p>your public ideas: <a href="/u/<%=h @user.login %>">here</a></p>
+<p><span class="bold">login:</span> <%=h @user.login %></p>
+<p><span class="bold">email:</span> <%=h @user.email %></p>
+<p><span class="bold">member since:</span> <%= @user.created_at.to_s %></p>
+<p><span class="bold">your public ideas:</span> <a href="/u/<%=h @user.login %>">here</a></p>
