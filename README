@@ -1,6 +1,12 @@
 TODO
 Rev 1:
- - polish (list view for ideas)
+ - polish (list view for ideas)?
+ - make current category underlined (left hand side)
+
+Rev 3:
+ - json api
+ - iphone app
+ - desktop app
 
 Rev 2:
  - sharing ideas with users, outsiders
@@ -8,7 +14,3 @@ Rev 2:
  - gravatars?
  - goal tracking?
 
-Rev 3:
- - json api
- - iphone app
- - desktop app

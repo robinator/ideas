@@ -15,6 +15,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @category }
+      format.js { render :json => @category }
     end
   end
 
@@ -43,9 +44,11 @@ class CategoriesController < ApplicationController
         flash[:notice] = 'Category was successfully updated.'
         format.html { redirect_to(@category) }
         format.xml  { head :ok }
+        format.js { head :ok }        
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
+        format.js { render :json => @category.errors }        
       end
     end
   end
@@ -64,6 +67,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(ideas_url) }
       format.xml  { head :ok }
+      format.js  { head :ok }
     end
   end
 end

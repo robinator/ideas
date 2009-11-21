@@ -237,4 +237,8 @@ p {
 }
 #ideas span {
 }
-
+.highlight {
+	background-color: #F9FAA2;
+	padding: 3px 5px;
+	border: 1px solid #999999;
+}

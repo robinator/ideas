@@ -9,6 +9,7 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ideas }
+      format.js { render :json => @ideas }
     end
   end
 
@@ -20,6 +21,7 @@ class IdeasController < ApplicationController
     respond_to do |format|
       if @idea.access == 'public' || current_user.has_access?(@idea)
         format.html
+        format.js { render :json => @idea }
       else
         flash[:error] = "You do not have permission to access this idea."
         format.html { redirect_to(ideas_url) }
@@ -61,9 +63,11 @@ class IdeasController < ApplicationController
         flash[:notice] = 'Idea was successfully created.'
         format.html { redirect_to(ideas_url) }
         format.xml  { render :xml => @idea, :status => :created, :location => @idea }
+        format.js  { render :json => @idea, :status => :created, :location => @idea }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @idea.errors, :status => :unprocessable_entity }
+        format.js  { render :json => @idea.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -83,9 +87,11 @@ class IdeasController < ApplicationController
         flash[:notice] = 'Idea was successfully updated.'
         format.html { redirect_to(ideas_url) }
         format.xml  { head :ok }
+        format.js  { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @idea.errors, :status => :unprocessable_entity }
+        format.js  { render :json => @idea.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -104,6 +110,7 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(ideas_url) }
       format.xml  { head :ok }
+      format.js  { head :ok }
     end
   end
   
@@ -113,6 +120,7 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ideas }
+      format.js  { render :json => @ideas }
     end
   end
 
