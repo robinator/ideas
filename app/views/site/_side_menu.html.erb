@@ -1,11 +1,9 @@
 <% content_for :sidebar_left do %>
-
 	<% if current_user %>
 		<ul id="sidebar-items">
 		  <li>
 		    <form id="search" action="<%= search_path %>" method="get">
 		      <input type="text" id="search-text" name="q" value="" />
-		      <input type="submit" value="Search" />
 		    </form>
 		  </li>      
 		  <li>
