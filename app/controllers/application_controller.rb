@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def check_administrator_role
+    current_user && current_user.login == 'admin' ? true : access_denied
+  end
+  
 end
