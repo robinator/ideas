@@ -137,8 +137,8 @@ p {
 }
 #message {
 	margin: 5px 0px;
-	padding: 5px 10px;
-	background: #C8F5C3;
+	padding: 3px 10px 5px 25px;
+	background: #C8F5C3 url('../images/lightbulb.png') no-repeat 5px;
 	border: 1px dashed #33CB21;
 	display: inline;
 }
