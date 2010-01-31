@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
   
   def forgot_password(user, password)
     setup(user)
-    @subject = "Thanks for signing up!"
+    @subject = "Password Recovery"
     @body = { :user => user }
     @password = password
   end
