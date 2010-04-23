@@ -48,6 +48,11 @@ p {
   font-size: 11px;
   color: #F38989; }
 
+.highlight {
+  background-color: #F9FAA2;
+  padding: 3px 5px;
+  border: 1px solid #999999; }
+
 #page {
   background-color: #ffffff;
   margin-left: 15%;
@@ -69,13 +74,6 @@ p {
       text-decoration: none; }
       #header h1 a:hover {
         text-decoration: none; }
-  #header #user_menu {
-    padding: 5px 0px 0px 0px;
-    float: right;
-    display: inline;
-    vertical-align: bottom; }
-    #header #user_menu a {
-      font-size: 12px; }
 
 #middle {
   overflow: hidden;
@@ -88,11 +86,6 @@ p {
   padding: 5px;
   width: 80%;
   padding-top: 0px; }
-
-#sidebar {
-  float: left;
-  width: 13%;
-  padding: 0px 5px; }
 
 #search {
   margin: 0;
@@ -107,23 +100,69 @@ p {
     margin: 0px;
     padding: 0px; }
 
-#sidebar.left {
-  text-align: right;
-  padding-right: 10px; }
-#sidebar ul {
+#footer {
+  clear: both;
+  border-top: 1px solid #808080;
+  text-align: center;
+  font-size: 10px;
+  padding: 5px; }
+  #footer a {
+    color: #F38989; }
+  #footer #site_nav a {
+    color: #3377DD;
+    padding: 0px 3px; }
+
+.idea h2 {
+  display: inline;
   margin: 0px; }
-  #sidebar ul h3 {
+.idea .controls {
+  padding-left: 10px;
+  font-size: 11px; }
+.idea .delete {
+  color: #EC3734; }
+.idea .info {
+  display: block;
+  font-size: 10px;
+  font-style: italic; }
+.idea .body {
+  width: 50%;
+  background-color: #eeeeee;
+  padding: 5px; }
+
+#ideas {
+  margin-left: 10px; }
+  #ideas li {
+    padding: 3px 0px; }
+
+#sidebar {
+  float: left;
+  width: 13%;
+  padding: 0px 5px; }
+  #sidebar.left {
+    text-align: right;
+    padding-right: 10px; }
+  #sidebar ul {
+    margin: 0px; }
+  #sidebar h3 {
     font-size: 16px;
     border-bottom: 1px solid #ccc; }
-#sidebar li {
-  list-style-type: none;
-  margin-bottom: 10px; }
-#sidebar ul.links li {
-  font-size: 11px;
-  margin-bottom: 5px; }
-#sidebar ul.links .current {
-  color: #333;
-  list-style-type: disc; }
+  #sidebar.links li {
+    font-size: 11px;
+    margin-bottom: 5px; }
+    #sidebar.links li .current {
+      color: #333;
+      list-style-type: disc; }
+  #sidebar li {
+    list-style-type: none;
+    margin-bottom: 10px; }
+
+#user_menu {
+  padding: 5px 0px 0px 0px;
+  float: right;
+  display: inline;
+  vertical-align: bottom; }
+  #user_menu a {
+    font-size: 12px; }
 
 #message {
   margin: 5px 0px;
@@ -166,7 +205,7 @@ p {
     padding: 5px 25px;
     font-size: 12px;
     margin: -7px;
-    background: #F9C0BF url('../images/cancel.png') no-repeat 5px;
+    background: #F9C0BF url('/images/cancel.png') no-repeat 5px;
     font-family: Tahoma;
     font-style: normal;
     letter-spacing: -0px; }
@@ -178,42 +217,3 @@ p {
     font-size: 12px;
     list-style: square;
     margin-left: 30px; }
-
-#footer {
-  clear: both;
-  border-top: 1px solid #808080;
-  text-align: center;
-  font-size: 10px;
-  padding: 5px; }
-  #footer a {
-    color: #F38989; }
-  #footer #site_nav a {
-    color: #3377DD;
-    padding: 0px 3px; }
-
-.idea h2 {
-  display: inline;
-  margin: 0px; }
-.idea .controls {
-  padding-left: 10px;
-  font-size: 11px; }
-.idea .delete {
-  color: #EC3734; }
-.idea .info {
-  display: block;
-  font-size: 10px;
-  font-style: italic; }
-.idea .body {
-  width: 50%;
-  background-color: #eeeeee;
-  padding: 5px; }
-
-#ideas {
-  margin-left: 10px; }
-  #ideas li {
-    padding: 3px 0px; }
-
-.highlight {
-  background-color: #F9FAA2;
-  padding: 3px 5px;
-  border: 1px solid #999999; }
