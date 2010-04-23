@@ -3,7 +3,7 @@ development:
   encoding: utf8
   host: localhost
   username: root
-#  password: root
+  password: root
   database: idealogue
   
 test:
