@@ -10,7 +10,7 @@
 	<% end %>
 	<span class="info">Created by <%= link_to h(@idea.creator.login), @idea.creator %> on <%= readable_date(@idea.created_at) %></span>
 
-	<p class="body"><%=h @idea.body.gsub("\n", "<br />") %></p>
+	<p class="body"><%= @idea.body.gsub("\n", "<br />") %></p>
 	<p><span class="bold">inspiration: </span><%=h @idea.inspiration %></p>
 	<p><span class="bold">application: </span><%=h @idea.application %></p>
 	<p><span class="bold">when to execute: </span><%=h @idea.when_to_execute %></p>
