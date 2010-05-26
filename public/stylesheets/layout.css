@@ -150,11 +150,11 @@ p {
   #sidebar.links li {
     font-size: 11px;
     margin-bottom: 5px; }
-    #sidebar.links li .current {
-      color: #333;
-      list-style-type: disc; }
   #sidebar li {
     list-style-type: none; }
+    #sidebar li .current a {
+      color: #333;
+      font-style: italic; }
 
 #user_menu {
   padding: 5px 0px 0px 0px;
