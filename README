@@ -1,20 +1,16 @@
 TODO
 Rev 1:
- - polish (list view for ideas)?
  - make current category underlined (left hand side)
 
  - madebylaw link
- - favicon
  - background-image experiments
 
 
 Rev 3:
- - json api
- - iphone app
- - desktop app
+ - iphone / mobile version (jqtouch?)
+ - jquery for js?
 
 Rev 2:
- - sharing ideas with users, outsiders
- - multi-categories?
+ - multi-categories? (tags)
  - gravatars?
- - goal tracking?
+ - rich text ?

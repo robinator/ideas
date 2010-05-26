@@ -3,7 +3,7 @@ class SiteController < ApplicationController
   before_filter :check_administrator_role, :only => [:admin]
   
   def about
-    @title = " "
+
   end
   
   def feedback

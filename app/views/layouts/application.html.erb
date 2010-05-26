@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Idealogue - <%= @title %></title>
+    <title><%= @title || 'Idealogue' %></title>
 		<link href="/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
 		<%= javascript_include_tag 'prototype' %>
   </head>
