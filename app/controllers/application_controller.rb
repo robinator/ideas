@@ -9,26 +9,18 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
-  protected  
-
-  def log_error(exception) 
-    super(exception)
-    begin
-      if RAILS_ENV == 'production'
-        UserMailer.deliver_snapshot(
-          exception, 
-          clean_backtrace(exception), 
-          session.data, 
-          params, 
-          request.env)
-      end
-    rescue => e
-      logger.error(e)
-    end
+  private
+  
+  def mobile_device?
+    request.user_agent =~ /mobile|webOS/
   end
+  
+  helper_method :mobile_device?
+  
+  protected
   
   def check_administrator_role
     current_user && current_user.login == 'admin' ? true : access_denied
   end
-  
+
 end

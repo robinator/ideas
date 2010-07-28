@@ -9,8 +9,12 @@
 		  <li>
 		    <h3>Ideas</h3>
 		    <ul class="links">
-		      <li><a href="<%= new_idea_path %>">New</a></li>
-					<li><a href="<%= ideas_path %>">All</a></li>
+		      <li class="<%= 'current' if params[:action] == 'new' %>">
+						<a href="<%= new_idea_path %>">New</a>
+					</li>
+					<li class="<%= 'current' if params[:action] == 'index' %>">
+						<a href="<%= ideas_path %>">All</a>
+					</li>
 		    </ul>
 		  </li>
 		  <li>

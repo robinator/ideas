@@ -3,13 +3,14 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title><%= @title || 'Idealogue' %></title>
-		<link href="/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+		<%= stylesheet_link_tag 'layout' %>
+		<%= stylesheet_link_tag 'mobile' if mobile_device? %>
 		<%= javascript_include_tag 'prototype' %>
   </head>
   <body>
     <div id="page">
 			<div id="header">
-				<h1><a href="<%= root_path %>">Idealogue</a></h1>
+				<h1><%= link_to 'Idealogue', root_path %></h1>
 				<div id="user_menu">
 					<% if logged_in? -%>
 						Welcome, <span class="bold"><%= link_to h(current_user.login), user_path(current_user) %></span>
@@ -39,7 +40,7 @@
 					<%= link_to 'about', about_path %>
 					<%= link_to 'feedback', feedback_path %>
       	</div>
-				<a href="http://madebylaw.heroku.com">{ l a w }</a>
+				<%= link_to '{ l a w }', 'http://madebylaw.heroku.com' %>
       </div>
     </div>
 		<script type="text/javascript">

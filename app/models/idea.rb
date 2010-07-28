@@ -9,7 +9,7 @@ class Idea < ActiveRecord::Base
   
   def category_name=(name)
     unless name.blank?
-      c = Category.new_from_name(name, User.stamper) # user User.stamper because creator_id is not set
+      c = Category.new_from_name(name, User.stamper) # use User.stamper because creator_id is not set
       self.category = c
     end
   end

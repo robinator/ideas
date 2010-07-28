@@ -6,14 +6,13 @@ body {
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
-  background-color: #ffffff;
   font-family: Tahoma;
   font-size: 13px;
-  color: #333; }
+  color: #333333; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000000;
-  font-family: "Arno Pro","Baskerville",Times,serif;
+  color: black;
+  font-family: "Arno Pro", "Baskerville", Times, serif;
   letter-spacing: -0.5px;
   font-style: italic; }
 
@@ -21,7 +20,7 @@ h1 {
   font-size: 28px; }
 
 a {
-  color: #3377DD;
+  color: #3377dd;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -46,21 +45,21 @@ p {
 
 .hint {
   font-size: 11px;
-  color: #F38989; }
+  color: #f38989; }
 
 .highlight {
-  background-color: #F9FAA2;
+  background-color: #f9faa2;
   padding: 3px 5px;
   border: 1px solid #999999; }
 
 #page {
-  background-color: #ffffff;
+  background-color: white;
   margin-left: 15%;
   margin-right: 15%;
   overflow: hidden; }
 
 #header {
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid gray;
   padding: 5px;
   padding-bottom: 0px;
   overflow: hidden; }
@@ -70,7 +69,7 @@ p {
     margin-bottom: 0px;
     padding-bottom: 0px; }
     #header h1 a {
-      color: #000000;
+      color: black;
       text-decoration: none; }
       #header h1 a:hover {
         text-decoration: none; }
@@ -102,14 +101,14 @@ p {
 
 #footer {
   clear: both;
-  border-top: 1px solid #808080;
+  border-top: 1px solid gray;
   text-align: center;
   font-size: 10px;
   padding: 5px; }
   #footer a {
-    color: #F38989; }
+    color: #f38989; }
   #footer #site_nav a {
-    color: #3377DD;
+    color: #3377dd;
     padding: 0px 3px; }
 
 .idea h2 {
@@ -119,7 +118,7 @@ p {
   padding-left: 10px;
   font-size: 11px; }
 .idea .delete {
-  color: #EC3734; }
+  color: #ec3734; }
 .idea .info {
   display: block;
   font-size: 10px;
@@ -145,7 +144,7 @@ p {
     margin: 0px; }
   #sidebar h3 {
     font-size: 16px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
     margin-top: 10px; }
   #sidebar.links li {
     font-size: 11px;
@@ -153,7 +152,7 @@ p {
   #sidebar li {
     list-style-type: none; }
     #sidebar li .current a {
-      color: #333;
+      color: #333333;
       font-style: italic; }
 
 #user_menu {
@@ -167,17 +166,17 @@ p {
 #message {
   margin: 5px 0px;
   padding: 3px 10px 5px 25px;
-  background: #C8F5C3 url('../images/lightbulb.png') no-repeat 5px;
-  border: 1px dashed #33CB21;
+  background: #c8f5c3 url("../images/lightbulb.png") no-repeat 5px;
+  border: 1px dashed #33cb21;
   display: inline; }
 
 #notice {
-  background: #C8F5C3 url('../images/accept.png') no-repeat 5px;
-  border: 1px dashed #33CB21; }
+  background: #c8f5c3 url("../images/accept.png") no-repeat 5px;
+  border: 1px dashed #33cb21; }
 
 #error {
-  background: #F9C0BF url('../images/cancel.png') no-repeat 5px;
-  border: 1px dashed #D91813; }
+  background: #f9c0bf url("../images/cancel.png") no-repeat 5px;
+  border: 1px dashed #d91813; }
 
 #notice, #error {
   padding: 5px 25px;
@@ -186,15 +185,15 @@ p {
 .fieldWithErrors {
   display: inline; }
   .fieldWithErrors input {
-    border: 1px solid #D91813;
+    border: 1px solid #d91813;
     padding: 2px; }
   .fieldWithErrors label {
-    color: #D91813;
+    color: #d91813;
     font-weight: bold; }
 
 #errorExplanation {
   width: 400px;
-  border: 1px solid #D91813;
+  border: 1px solid #d91813;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -205,12 +204,12 @@ p {
     padding: 5px 25px;
     font-size: 12px;
     margin: -7px;
-    background: #F9C0BF url('/images/cancel.png') no-repeat 5px;
+    background: #f9c0bf url("/images/cancel.png") no-repeat 5px;
     font-family: Tahoma;
     font-style: normal;
-    letter-spacing: -0px; }
+    letter-spacing: 0px; }
   #errorExplanation p {
-    color: #333;
+    color: #333333;
     margin-bottom: 0;
     padding: 5px; }
   #errorExplanation ul li {

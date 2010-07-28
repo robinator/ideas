@@ -1,8 +1,6 @@
 class IdeasController < ApplicationController
   before_filter :login_required, :except => [:show]
   
-  # GET /ideas
-  # GET /ideas.xml
   def index
     @ideas = current_user.ideas
     
@@ -13,8 +11,6 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/1
-  # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
     
@@ -29,8 +25,6 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/new
-  # GET /ideas/new.xml
   def new
     @idea = Idea.new
 
@@ -39,7 +33,6 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/1/edit
   def edit
     @idea = Idea.find(params[:id])
 
