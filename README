@@ -1,9 +1,6 @@
 TODO
-- Setup debug and idealogue @varietyour.com addresses
 - get test suite running right
-- sendgrid setup
-- move and change keys
-
+- sass
 
 Mods:
 Rev 1:
@@ -18,6 +15,3 @@ Rev 3:
 Rev 2:
  - multi-categories? (tags)
  - rich text ?
-
-
-

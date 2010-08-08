@@ -216,3 +216,20 @@ p {
     font-size: 12px;
     list-style: square;
     margin-left: 30px; }
+
+body {
+  background-color: #f8f1e9; }
+
+#page {
+  background-color: #f8f1e9; }
+
+#header {
+  background-color: #8d7966;
+  margin-bottom: 10px; }
+  #header a {
+    color: white; }
+  #header h1 a {
+    color: #f28751; }
+
+#middle {
+  background-color: white; }

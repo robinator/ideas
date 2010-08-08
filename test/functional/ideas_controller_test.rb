@@ -19,7 +19,7 @@ class IdeasControllerTest < ActionController::TestCase
 
   test "should create ideas" do
     assert_difference('Idea.count') do
-      post :create, :ideas => { }
+      post :create, :idea => {:name => 'idea1' }
     end
 
     assert_redirected_to ideas_path(assigns(:ideas))
@@ -36,7 +36,7 @@ class IdeasControllerTest < ActionController::TestCase
   end
 
   test "should update ideas" do
-    put :update, :id => ideas(:one).to_param, :ideas => { }
+    put :update, :id => ideas(:one).to_param, :idea => {:name => 'idea1' }
     assert_redirected_to ideas_path(assigns(:ideas))
   end
 
