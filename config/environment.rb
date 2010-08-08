@@ -35,16 +35,10 @@ Rails::Initializer.run do |config|
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.time_zone = 'UTC'
- # config.active_record.observers = :user_observer
-  #config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
-  #config.gem 'jkraemer-acts_as_ferret', :version => '~> 0.4.4', :lib => 'acts_as_ferret', :source => 'http://gems.github.com'
-  
+    
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
-
-# put passwords and things here to keep out of git
-require File.join(File.dirname(__FILE__), 'keys')

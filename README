@@ -1,17 +1,23 @@
 TODO
+- Setup debug and idealogue @varietyour.com addresses
+- get test suite running right
+- sendgrid setup
+- move and change keys
+
+
+Mods:
 Rev 1:
  - background-image experiments
 
 Rev 3:
  - iphone / mobile version (jqtouch?)
  - jquery for js?
+ - rails 3
+ - ruby 1.9
 
 Rev 2:
  - multi-categories? (tags)
- - gravatars?
  - rich text ?
 
 
 
-- Setup debug and idealogue @varietyour.com addresses
-- get test suite running right
