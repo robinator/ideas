@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class IdeasControllerTest < ActionController::TestCase
+  # called before every single test 
+  def setup
+    login!(:quentin)
+  end 
+    
   test "should get index" do
     get :index
     assert_response :success

@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+require 'redgreen'
 include AuthenticatedTestHelper
 
 class ActiveSupport::TestCase
@@ -34,6 +35,10 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
+
+  def login!(user)
+    session[:user_id] = users(user).id
+  end
 
   # Add more helper methods to be used by all tests here...
 end

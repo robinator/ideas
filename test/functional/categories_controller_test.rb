@@ -1,23 +1,8 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:categories)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create category" do
-    assert_difference('Category.count') do
-      post :create, :category => { }
-    end
-
-    assert_redirected_to category_path(assigns(:category))
+  def setup
+    login!(:quentin)
   end
 
   test "should show category" do
@@ -35,11 +20,20 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to category_path(assigns(:category))
   end
 
-  test "should destroy category" do
+  test "should destroy category if belongs to user" do
     assert_difference('Category.count', -1) do
       delete :destroy, :id => categories(:one).to_param
     end
 
-    assert_redirected_to categories_path
+    assert_redirected_to ideas_path
+  end
+  
+  test "should not destroy another users category" do
+    assert_no_difference('Category.count', -1) do
+      delete :destroy, :id => categories(:two).to_param
+    end
+    
+    assert_equal 'You do not have permission to access this category.', flash[:error]
+    assert_redirected_to ideas_path
   end
 end

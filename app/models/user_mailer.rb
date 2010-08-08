@@ -15,13 +15,13 @@ class UserMailer < ActionMailer::Base
   protected
     def setup(user)
       @recipients = "#{user.login} <#{user.email}>"
-      @from        = "idealogue@madebylaw.com" # add angles eventually? TODO
+      @from        = "idealogue@varietyour.com" # add angles eventually? TODO
       @sent_on     = Time.now
       @content_type = "text/plain" # should be multipart? TODO http://api.rubyonrails.org/classes/ActionMailer/Base.html
 
       #debug purposes...
       unless ENV['RAILS_ENV'] == 'production'
-        @recipients = "madebylaw@gmail.com"
+        @recipients = "debug@varietyour.com"
       end
     end
 end

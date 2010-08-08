@@ -46,9 +46,6 @@ class UsersControllerTest < ActionController::TestCase
     end
   end
   
-
-  
-
   protected
     def create_user(options = {})
       post :create, :user => { :login => 'quire', :email => 'quire@example.com',

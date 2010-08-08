@@ -8,7 +8,7 @@ class Category < ActiveRecord::Base
   
   
   def self.new_from_name(name, creator_id)
-    c = Category.first(:conditions => {:creator_id => creator_id, :name => name})
+    c = Category.first(:conditions => {:name => name, :creator_id => creator_id})
     unless c
       c = Category.new(:name => name, :creator_id => creator_id)
       c.save

@@ -1,10 +1,10 @@
 one:
-  id:                        1
-  category_id:               1
-  name:                      nasa
-  body:                      blash slfkjas;ldfj a;lfjaflj as fjas f
-  inspiration:               space stuff
-  application:               sell to bill stone
-  when_to_execute:           5 years
-  executed:                  false
-  private:                   true
+  id:              1
+  category_id:     1
+  name:            nasa
+  body:            blash slfkjas;ldfj a;lfjaflj as fjas f
+  inspiration:     space stuff
+  application:     sell to bill stone
+  when_to_execute: 5 years
+  executed:        false
+  access:          private
