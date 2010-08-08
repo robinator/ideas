@@ -1,3 +1,5 @@
+rails -v 2.3.5
+pg
 rubyist-aasm --source gems.github.com
 jkraemer-acts_as_ferret --source gems.github.com
 haml
