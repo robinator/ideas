@@ -42,3 +42,6 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+REST_AUTH_SITE_KEY = ENV['REST_AUTH_SITE_KEY']
+REST_AUTH_DIGEST_STRETCHES = ENV['REST_AUTH_DIGEST_STRETCHES']
