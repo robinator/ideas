@@ -2,10 +2,8 @@ class Idea < ActiveRecord::Base
   belongs_to :category
   stampable
   
-  attr_accessor :category_name
-  
+  attr_accessor :category_name  
   validates_presence_of :name
-  acts_as_ferret :fields => [ :name, :body, :inspiration, :application, :when_to_execute ] if RAILS_ENV == 'production'
   
   def category_name=(name)
     unless name.blank?

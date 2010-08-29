@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.search '/ideas/search', :controller => 'ideas', :action => 'search'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.signup '/signup', :controller => 'users', :action => 'new'
@@ -9,7 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :ideas
   map.resources :categories
-  map.resources :schemas
   map.resources :users
   map.resource :session
 

@@ -106,15 +106,5 @@ class IdeasController < ApplicationController
       format.js  { head :ok }
     end
   end
-  
-  def search
-    @ideas = Idea.find_with_ferret(params[:q]).delete_if {|i| i.access != 'public' && !current_user.has_access?(i)}
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @ideas }
-      format.js  { render :json => @ideas }
-    end
-  end
 
 end

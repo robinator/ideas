@@ -2,11 +2,6 @@
 	<% if current_user %>
 		<ul id="sidebar-items">
 		  <li>
-		    <form id="search" action="<%= search_path %>" method="get">
-		      <input type="text" id="search-text" name="q" value="" />
-		    </form>
-		  </li>
-		  <li>
 		    <h3>Ideas</h3>
 		    <ul class="links">
 		      <li><a href="<%= new_idea_path %>">New</a></li>

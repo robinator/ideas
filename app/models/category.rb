@@ -3,9 +3,7 @@ class Category < ActiveRecord::Base
   stampable
   
   validates_presence_of :name
-  validates_uniqueness_of :name, :scope => :creator_id
-  acts_as_ferret :fields => [ :name ] if RAILS_ENV == 'production'
-  
+  validates_uniqueness_of :name, :scope => :creator_id  
   
   def self.new_from_name(name, creator_id)
     c = Category.first(:conditions => {:name => name, :creator_id => creator_id})
