@@ -13,7 +13,8 @@
 		<% if current_user.categories.empty? %>
 			<%= f.text_field :category_name %>
 		<% else %>
-			<%= f.select("category_id", current_user.categories.collect {|c| [ c.name, c.id ] }) %> <%= link_to_function "new", "$('new_category').toggle();" %>
+			<%= f.select("category_id", current_user.categories.collect {|c| [ c.name, c.id ] }) %> 
+			<%= link_to_function "new", "$('#new_category').toggle();" %>
 			<div id="new_category" style="display: none;">
 				<%= f.label 'new_category_name' %><br />
 				<%= f.text_field :category_name %>
@@ -44,7 +45,6 @@
 		<%= label_tag 'access' %><br />
 		private <%= f.radio_button("access", "private") %>
 		public <%= f.radio_button("access", "public") %>
-		<%#= f.radio_button("access", "shared") %>
 	</p>
   <p>
     <%= f.submit 'Update' %> <%= link_to 'cancel', @idea %>

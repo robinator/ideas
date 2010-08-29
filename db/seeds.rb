@@ -6,4 +6,3 @@
     puts user.errors.full_messages
   end
 end
-
