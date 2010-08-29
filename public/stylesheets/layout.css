@@ -86,19 +86,6 @@ p {
   width: 80%;
   padding-top: 0px; }
 
-#search {
-  margin: 0;
-  font-size: 11px; }
-  #search input {
-    font-size: 11px;
-    margin: 2px 0px; }
-  #search #search-text {
-    width: 100%; }
-  #search form {
-    background-color: yellow;
-    margin: 0px;
-    padding: 0px; }
-
 #footer {
   clear: both;
   border-top: 1px solid gray;
@@ -110,6 +97,9 @@ p {
   #footer #site_nav a {
     color: #3377dd;
     padding: 0px 3px; }
+  #footer #validations a {
+    color: #aaaaaa;
+    font-size: 0.8em; }
 
 .idea h2 {
   display: inline;
