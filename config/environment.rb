@@ -43,5 +43,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
+Haml::Template.options[:format] = :html5
 REST_AUTH_SITE_KEY = ENV['REST_AUTH_SITE_KEY']
 REST_AUTH_DIGEST_STRETCHES = ENV['REST_AUTH_DIGEST_STRETCHES'].to_i
