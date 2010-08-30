@@ -28,6 +28,9 @@ a {
 img {
   border: none; }
 
+label {
+  display: block; }
+
 input {
   margin-bottom: 5px; }
 

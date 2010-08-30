@@ -1,0 +1,14 @@
+- if current_user && current_user.id == @user.id
+	%span.controls= link_to 'edit', edit_user_path(@user)
+	%p
+		%span.bold login:
+		=h @user.login
+	%p
+		%span.bold email:
+		=h @user.email
+	%p
+		%span.bold member since:
+		= readable_date @user.created_at
+	%p
+		%span.bold your public ideas:
+		= link_to 'here', "/u/#{h(@user.login)}"

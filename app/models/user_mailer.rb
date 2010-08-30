@@ -18,10 +18,5 @@ class UserMailer < ActionMailer::Base
       @from        = "idealogue@varietyour.com" # add angles eventually? TODO
       @sent_on     = Time.now
       @content_type = "text/plain" # should be multipart? TODO http://api.rubyonrails.org/classes/ActionMailer/Base.html
-
-      #debug purposes...
-      unless ENV['RAILS_ENV'] == 'production'
-        @recipients = "debug@varietyour.com"
-      end
     end
 end

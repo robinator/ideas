@@ -1,0 +1,37 @@
+- content_for :sidebar_left do
+	%ul#sidebar-items
+		%li
+			%h3 What?
+			%ul.links
+				%li
+					Idealogue is a 
+					%span.bold.italic.fancy free
+				%li
+					%h3 Features
+					%ul.links
+						%li Organize and categorize ideas.
+						%li Keep ideas private or share them publicly.
+
+%h1 Sign up as a new user
+- @user.password = @user.password_confirmation = nil
+= error_messages_for :user
+- form_for :user, :url => users_path do |f|
+	%p
+		= f.label 'login'
+		= f.text_field :login
+	%p
+		= f.label 'email'
+		= f.text_field :email
+		%span.bold.fancy.italic.hint no spam
+	%p
+		= f.label 'password'
+		= f.password_field :password
+	%p
+		= f.label 'password_confirmation', 'Confirm Password'
+		= f.password_field :password_confirmation
+	%p
+		%label{:for => 'recaptcha'} Human?
+		= recaptcha_tags :display => {:theme => 'clean'}
+	%p
+		= f.submit 'Sign up'
+		= link_to 'cancel', @user

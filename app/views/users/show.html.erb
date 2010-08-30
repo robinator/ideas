@@ -1,9 +1,0 @@
-<% if current_user && current_user.id == @user.id %>
-	<span class="controls">
-		<%= link_to 'edit', edit_user_path(@user) %>
-	</span>
-<% end %>
-<p><span class="bold">login:</span> <%=h @user.login %></p>
-<p><span class="bold">email:</span> <%=h @user.email %></p>
-<p><span class="bold">member since:</span> <%= readable_date @user.created_at %></p>
-<p><span class="bold">your public ideas:</span> <a href="/u/<%=h @user.login %>">here</a></p>

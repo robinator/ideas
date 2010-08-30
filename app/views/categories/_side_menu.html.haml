@@ -1,0 +1,13 @@
+- if current_user
+	- content_for :sidebar_left do
+		%ul#sidebar-items
+			%li
+				%h3 Ideas
+				%ul.links
+					%li= link_to 'New', new_idea_path
+					%li= link_to 'All', ideas_path
+			%li
+				%h3 Categories
+				%ul.links
+					- current_user.categories.each do |category|
+						%li{:class => category == @category && 'current'}= link_to h(category.name), category

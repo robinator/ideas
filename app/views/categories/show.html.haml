@@ -1,0 +1,12 @@
+= render 'side_menu'
+
+.idea
+	%h2= h(@category.name)
+	%span.controls
+		= link_to 'edit', edit_category_path(@category)
+		| 
+		= link_to 'delete', @category, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
+
+%ul
+	- @ideas.each do |idea|
+		%li= link_to h(idea.name), idea

@@ -1,0 +1,12 @@
+%h2{:style => 'display: inline; margin-right: 10px;'} 
+	= h(@user.login)
+	's Ideas
+= link_to image_tag('feed.png', :alt => 'rss', :title => 'RSS feed'), "/u/#{@user.login}.rss"
+
+- if @ideas.empty?
+	%p.italic No ideas?!
+- else
+	%ul#ideas
+		- @ideas.each do |idea|
+			%li
+				%span= link_to h(idea.name), idea

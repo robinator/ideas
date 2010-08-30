@@ -1,0 +1,13 @@
+= render 'side_menu'
+
+%h2 Ideas
+- if @ideas.empty?
+	%p.italic No ideas?!
+	%br
+	#message= link_to 'Create a new idea', new_idea_path
+	
+- else
+	%ul#ideas
+		- @ideas.each do |idea|
+			%li
+				%span= link_to h(idea.name), idea

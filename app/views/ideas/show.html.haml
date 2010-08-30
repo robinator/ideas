@@ -1,0 +1,33 @@
+= render 'side_menu'
+
+.idea
+	%h2=h @idea.name
+	- if current_user && current_user.has_access?(@idea)
+		%span.controls
+			= link_to 'edit', edit_idea_path(@idea)
+			| 
+			= link_to 'delete', @idea, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
+	
+	%span.info
+		Created by
+		= link_to h(@idea.creator.login), @idea.creator
+		on
+		= readable_date(@idea.created_at)
+			
+
+	%p.body= @idea.body.gsub("\n", "<br />")
+	%p
+		%span.bold inspiration: 
+		=h @idea.inspiration
+	%p
+		%span.bold application: 
+		=h @idea.application
+	%p
+		%span.bold when to execute: 
+		=h @idea.when_to_execute
+	%p
+		%span.bold executed?: 
+		=h @idea.executed?
+	%p
+		%span.bold access: 
+		=h @idea.access

@@ -1,0 +1,52 @@
+!!! XML
+!!! Strict
+%html
+	%head
+		%meta{:charset => "utf-8"}
+		%title= @title || 'Idealogue'
+		= stylesheet_link_tag 'layout'
+		= stylesheet_link_tag 'mobile' if mobile_device?
+		= javascript_include_tag 'jquery'
+
+	%body
+		#page
+			#header
+				%h1= link_to 'Idealogue', root_path
+				#user_menu
+					- if logged_in?
+						Welcome, 
+						%span.bold= link_to h(current_user.login), user_path(current_user)
+						[
+						= link_to 'logout', logout_url
+						]
+					- else
+						= link_to 'login', new_session_path
+						|
+						= link_to 'signup', new_user_path
+				 
+			#middle
+				#sidebar.left
+					= yield :sidebar_left
+				#content
+					- if flash[:notice]
+						#notice= flash[:notice]
+					- if flash[:error] 
+						#error= flash[:error]
+					= yield
+			#footer
+				#site_nav
+					= link_to 'about', about_path
+					= link_to 'feedback', feedback_path
+				#validations
+					= link_to 'HTML', 'http://validator.w3.org/check/referer'
+					= link_to 'CSS', 'http://jigsaw.w3.org/css-validator/check/referer'
+				= link_to '{ l a w }', 'http://robinator.github.com', :style => 'font-size: 0.7em;'
+		:javascript
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			
+		:javascript
+			try {
+				var pageTracker = _gat._getTracker("UA-11127801-1");
+				pageTracker._trackPageview();
+			} catch(err) {}

@@ -1,0 +1,43 @@
+= render 'side_menu'
+
+%h2 Editing idea
+
+- form_for(@idea) do |f|
+	= f.error_messages
+	%p
+		= f.label 'name'
+		= f.text_field :name
+	%p
+		= label_tag 'category'
+		- if current_user.categories.empty?
+			= f.text_field :category_name
+		- else
+			= f.select("category_id", current_user.categories.collect {|c| [ c.name, c.id ] })
+			= link_to_function "new", "$('#new_category').toggle();"
+			#new_category{:style => "display: none;"}
+				= f.label 'new_category_name'
+				= f.text_field :category_name
+	%p
+		= label_tag 'body'
+		= f.text_area :body
+	%p
+		= label_tag 'inspiration'
+		= f.text_field :inspiration
+	%p
+		= label_tag 'application'
+		= f.text_field :application
+	%p
+		= label_tag 'when_to_execute'
+		= f.text_field :when_to_execute
+	%p
+		= label_tag 'executed'
+		= f.check_box :executed
+	%p
+		= label_tag 'access'
+		private 
+		= f.radio_button("access", "private")
+		public
+		= f.radio_button("access", "public")
+	%p
+		= f.submit 'Update'
+		= link_to 'cancel', @idea
