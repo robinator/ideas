@@ -10,4 +10,4 @@ A small site to store ideas, quotes, and other textual trinkets.
 Live version [here](http://idealogue.heroku.com).
 
 &copy; Rob Law
-release under the MIT license
+released under the MIT license
